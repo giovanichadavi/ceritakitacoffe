@@ -138,7 +138,7 @@
                         Segelas racikan kopi dari barista terampil kami, dibuat khusus menggunakan biji kopi nusantara pilihan untuk menemani setiap pertukaran kisah hangatmu.
                     </p>
                     <div class="flex flex-wrap gap-4 py-2" data-aos="fade-up" data-aos-delay="600">
-                        <a href="#menu" class="btn-slide bg-coffee text-taupe px-6 py-3.5 rounded-full text-cream award-badge text-center font-bold">Lihat Menu Favorit</a>
+                        <a href="#menu" class="btn-slide bg-coffee text-taupe px-6 py-3.5 rounded-full text-cream award-badge text-center font-bold hover:bg-amber-800 transition-colors duration-300">Lihat Menu Favorit</a>
                         <a href="#about" class="btn-slide bg-transparent border-2 hover:bg-stone-800 text-coffee font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full text-center separator-accent title-accent">Baca Cerita Kami</a>
                     </div>
                 </div>
@@ -160,8 +160,10 @@
                         <button class="btn-slide bg-coffee text-taupe px-5 py-2.5 rounded-full award-badge text-cream font-bold">Order Instant</button>
                     </div>
                     
-                    <div class="flex flex-col items-center justify-center gap-4 bg-black/40 p-6 rounded-2xl border border-[#3b2c21] w-full max-w-[260px] min-h-[200px] text-center mt-6 mr-auto z-10">
-                        <img src="qr.png" alt="QR Code" class="w-24 h-24 md:w-32 md:h-32 object-contain rounded-xl bg-white p-2 shadow-md flex-shrink-0">
+                    <div class="flex flex-col items-center justify-center gap-4 bg-black/40 p-6 rounded-2xl border border-[#3b2c21] w-full max-w-[260px] min-h-[200px] text-center mt-6 mr-auto z-10 group select-none">
+                        <div class="overflow-hidden rounded-xl flex-shrink-0 bg-white p-2 shadow-md">
+                            <img src="qr.png" alt="QR Code" class="w-24 h-24 md:w-32 md:h-32 object-contain transform group-hover:scale-110 transition-transform duration-300">
+                        </div>
                         <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-xs">Scan for Check All Menu</p>
                     </div>
                 </div>
@@ -179,19 +181,19 @@
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full lg:w-auto flex-grow max-w-2xl">
-                <div class="p-5 rounded-3xl border text-center hover:shadow-md transition bg-[#2b1f16]/60 border-[#4a3525]" data-aos="zoom-in" data-aos-delay="300">
+                <div class="p-5 rounded-3xl border text-center hover:shadow-md transition bg-[#2b1f16]/60 border-[#4a3525] group">
                     <div class="text-2xl mb-2 philosophy-icon"><i class="fas fa-utensils"></i></div>
-                    <h4 class="font-bold text-sm mb-4 text-cream">Our Catering</h4>
+                    <h4 class="font-bold text-sm mb-4 text-stone-400 group-hover:text-[#fcf8f2] transition-colors duration-300">Our Catering</h4>
                     <button class="bg-coffee text-taupe px-4 py-2 rounded-full award-badge text-cream text-xs">Pesan Catering</button>
                 </div>
-                <div class="p-5 rounded-3xl border text-center hover:shadow-md transition bg-[#2b1f16]/60 border-[#4a3525]" data-aos="zoom-in" data-aos-delay="450">
+                <div class="p-5 rounded-3xl border text-center hover:shadow-md transition bg-[#2b1f16]/60 border-[#4a3525] group">
                     <div class="text-2xl mb-2 philosophy-icon"><i class="fas fa-hamburger"></i></div>
-                    <h4 class="font-bold text-sm mb-4 text-cream">Food Menu</h4>
+                    <h4 class="font-bold text-sm mb-4 text-stone-400 group-hover:text-[#fcf8f2] transition-colors duration-300">Food Menu</h4>
                     <button class="bg-coffee text-taupe px-4 py-2 rounded-full award-badge text-cream text-xs">Menu Makanan</button>
                 </div>
-                <div class="p-5 rounded-3xl border text-center hover:shadow-md transition bg-[#2b1f16]/60 border-[#4a3525]" data-aos="zoom-in" data-aos-delay="600">
+                <div class="p-5 rounded-3xl border text-center hover:shadow-md transition bg-[#2b1f16]/60 border-[#4a3525] group">
                     <div class="text-2xl mb-2 philosophy-icon"><i class="fas fa-ice-cream"></i></div>
-                    <h4 class="font-bold text-sm mb-4 text-cream">The Gelato</h4>
+                    <h4 class="font-bold text-sm mb-4 text-stone-400 group-hover:text-[#fcf8f2] transition-colors duration-300">The Gelato</h4>
                     <button class="bg-coffee text-taupe px-4 py-2 rounded-full award-badge text-cream text-xs">Temukan Rasa</button>
                 </div>
             </div>
@@ -327,16 +329,22 @@
             <div class="max-w-md text-center sm:text-left" data-aos="fade-right" data-aos-delay="200">
                 <h3 class="font-serif text-2xl font-bold mb-2 title-accent">Instant Coffee At Your Home</h3>
                 <p class="text-xs text-stone-500 leading-relaxed mb-6 text-taupe">Bawa pulang bubuk kopi sachet premium atau cold brew signature botolan racikan Ceritakita untuk dinikmati kapan saja di ruang ternyaman rumahmu.</p>
-                <button class="bg-coffee text-taupe px-3 py-6 rounded-full inline-flex items-center gap-2 transition award-badge text-cream font-bold"><i class="fab fa-google-play"></i> App Store & Play Store</button>
+                <button class="bg-coffee text-taupe px-5 py-3.5 rounded-full inline-flex items-center gap-2 award-badge text-cream font-bold transition transform active:scale-95 duration-100 shadow-md">
+                    <i class="fab fa-google-play"></i> App Store & Play Store
+                </button>
             </div>
             
             <div class="text-right flex items-center gap-6 select-none bg-black/40 p-5 rounded-2xl border border-[#3b2c21]" data-aos="fade-left" data-aos-delay="400">
                  <div class="flex flex-col items-center gap-2">
-                    <img src="qr.png" alt="App Store QR" class="w-[72px] h-[72px] object-contain rounded-lg bg-white p-1 shadow-md">
+                    <div class="overflow-hidden rounded-lg bg-white p-1.5 shadow-md">
+                        <img src="qr.png" alt="App Store QR" class="w-24 h-24 md:w-28 md:h-28 object-contain">
+                    </div>
                     <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-[11px]">App Store</p>
                 </div>
                  <div class="flex flex-col items-center gap-2">
-                    <img src="qr.png" alt="Play Store QR" class="w-[72px] h-[72px] object-contain rounded-lg bg-white p-1 shadow-md">
+                    <div class="overflow-hidden rounded-lg bg-white p-1.5 shadow-md">
+                        <img src="qr.png" alt="Play Store QR" class="w-24 h-24 md:w-28 md:h-28 object-contain">
+                    </div>
                     <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-[11px]">Play Store</p>
                 </div>
             </div>
