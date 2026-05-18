@@ -44,7 +44,7 @@
             color: #a39b94;
         }
         .award-badge {
-            background-color: #3b2c21;
+            background-color: #3b3c21;
             border-color: #e3d5ca;
             color: #e3d5ca;
         }
@@ -87,21 +87,6 @@
         .philosophy-subtitle {
             color: #fcf8f2;
         }
-
-        /* Generator Struktur QR Code Menggunakan Pola CSS Grid */
-        .qr-matrix-container {
-            width: 72px;
-            height: 72px;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            gap: 2px;
-            padding: 4px;
-            background: #fcf8f2;
-            border-radius: 8px;
-        }
-        .qr-pixel { background-color: #1e1b18; }
-        .qr-blank { background-color: transparent; }
     </style>
 </head>
 <body class="font-sans text-coffee antialiased pt-24 min-h-screen flex flex-col justify-between">
@@ -176,14 +161,7 @@
                     </div>
                     
                     <div class="flex flex-col items-center justify-center gap-4 bg-black/40 p-6 rounded-2xl border border-[#3b2c21] w-full max-w-[260px] min-h-[200px] text-center mt-6 mr-auto z-10">
-                        <div class="qr-matrix-container shadow-md flex-shrink-0">
-                            <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                            <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div>
-                            <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                            <div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                            <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                            <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                        </div>
+                        <img src="qr.png" alt="QR Code" class="w-[72px] h-[72px] object-contain rounded-lg bg-white p-1 shadow-md flex-shrink-0">
                         <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-xs">Scan for Check All Menu</p>
                     </div>
                 </div>
@@ -354,23 +332,11 @@
             
             <div class="text-right flex items-center gap-6 select-none bg-black/40 p-5 rounded-2xl border border-[#3b2c21]" data-aos="fade-left" data-aos-delay="400">
                  <div class="flex flex-col items-center gap-2">
-                    <div class="qr-matrix-container shadow-md">
-                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                        <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                        <div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div>
-                        <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div>
-                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                    </div>
+                    <img src="qr.png" alt="App Store QR" class="w-[72px] h-[72px] object-contain rounded-lg bg-white p-1 shadow-md">
                     <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-[11px]">App Store</p>
                 </div>
                  <div class="flex flex-col items-center gap-2">
-                    <div class="qr-matrix-container shadow-md">
-                        <div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                        <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div>
-                        <div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                    </div>
+                    <img src="qr.png" alt="Play Store QR" class="w-[72px] h-[72px] object-contain rounded-lg bg-white p-1 shadow-md">
                     <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-[11px]">Play Store</p>
                 </div>
             </div>
