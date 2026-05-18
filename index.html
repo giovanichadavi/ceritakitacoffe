@@ -27,7 +27,7 @@
 
     <style>
         body {
-            background-color: #cbdbe5; /* Warna background frame luar biru pastel */
+            background: linear-gradient(to bottom, #cbdbe5, #dfe9f0, #f0f4f8);
         }
         .bg-cream {
             background-color: #fcf8f2;
@@ -35,7 +35,6 @@
         .text-coffee {
             color: #1e1b18;
         }
-        /* Style kursor kustom lembut */
         .btn-slide {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -43,30 +42,54 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+        nav.scrolled {
+            background: rgba(252, 248, 242, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(30, 27, 24, 0.05);
+        }
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
     </style>
 </head>
-<body class="font-sans text-coffee antialiased p-0 md:p-6 min-h-screen flex items-center justify-center">
+<body class="font-sans text-coffee antialiased pt-24 min-h-screen flex flex-col justify-between">
 
-    <div class="w-full max-w-7xl bg-[#cbdbe5] rounded-none md:rounded-[2rem] overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-4 p-2 md:p-4">
+    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 py-5 px-6 md:px-12 flex justify-between items-center bg-transparent">
+        <div class="font-serif text-2xl font-black tracking-tight flex items-center gap-1.5 select-none">
+            <span class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-sans">C</span> ceritakita.
+        </div>
         
-        <div class="lg:col-span-7 space-y-4 flex flex-col justify-between">
-            
-            <div class="bg-cream rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex-grow flex flex-col justify-between min-h-[550px]">
-                <div class="flex justify-between items-center mb-8">
-                    <div class="font-serif text-2xl font-black tracking-tight flex items-center gap-1">
-                        <span class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-sans">C</span> ceritakita.
-                    </div>
-                    <div class="hidden sm:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-stone-500">
-                        <a href="#" class="hover:text-black transition">Menu</a>
-                        <a href="#" class="hover:text-black transition">Tentang</a>
-                        <a href="#" class="hover:text-black transition">Lokasi</a>
-                        <a href="#" class="bg-black text-white px-4 py-2 rounded-full hover:bg-stone-800 transition">Voucher</a>
-                    </div>
-                </div>
+        <div class="hidden md:flex gap-8 items-center text-xs font-bold uppercase tracking-wider text-stone-600">
+            <a href="#home" class="hover:text-black transition">Home</a>
+            <a href="#explore" class="hover:text-black transition">Explore</a>
+            <a href="#menu" class="hover:text-black transition">Best Seller</a>
+            <a href="#about" class="hover:text-black transition">Cerita Kami</a>
+            <a href="#testimonials" class="hover:text-black transition">Testimoni</a>
+            <a href="#order" class="bg-black text-white px-5 py-2.5 rounded-full hover:bg-stone-800 transition shadow-md">Order Online</a>
+        </div>
+        
+        <button class="md:hidden text-xl z-50 p-2" id="hamburger-btn">
+            <i class="fas fa-bars-staggered" id="menu-icon"></i>
+        </button>
+    </nav>
 
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-cream z-40 transform translate-x-full flex flex-col justify-center items-center gap-6 text-center shadow-2xl md:hidden">
+        <a href="#home" class="mobile-link font-serif text-2xl font-bold py-2">Home</a>
+        <a href="#explore" class="mobile-link font-serif text-2xl font-bold py-2">Explore</a>
+        <a href="#menu" class="mobile-link font-serif text-2xl font-bold py-2">Best Seller</a>
+        <a href="#about" class="mobile-link font-serif text-2xl font-bold py-2">Cerita Kami</a>
+        <a href="#testimonials" class="mobile-link font-serif text-2xl font-bold py-2">Testimoni</a>
+        <a href="#order" class="mobile-link mt-4 bg-black text-white font-bold text-sm uppercase tracking-wider px-8 py-3 rounded-full">Order Online</a>
+    </div>
+
+    <main class="w-full max-w-7xl mx-auto px-4 md:px-6 space-y-16 mb-16">
+        
+        <section id="home" class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            
+            <div class="lg:col-span-7 bg-cream rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col justify-between min-h-[550px] shadow-sm">
                 <div class="max-w-md my-auto relative z-10">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full border border-amber-200">
+                        <span class="text-xs font-bold uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full border border-amber-200/60">
                             ⭐ Cafe Of The Year 2026
                         </span>
                     </div>
@@ -78,8 +101,8 @@
                         Segelas racikan kopi dari barista terampil kami, dibuat khusus menggunakan biji kopi nusantara pilihan untuk menemani setiap pertukaran kisah hangatmu.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <button class="btn-slide bg-black text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full">Lihat Menu Favorit</button>
-                        <button class="btn-slide bg-transparent border-2 border-stone-300 hover:border-black text-black font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full">Beli Kopi Biji</button>
+                        <a href="#menu" class="btn-slide bg-black text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full text-center">Lihat Menu Favorit</a>
+                        <a href="#about" class="btn-slide bg-transparent border-2 border-stone-300 hover:border-black text-black font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full text-center">Baca Cerita Kami</a>
                     </div>
                 </div>
 
@@ -96,126 +119,264 @@
                 </div>
             </div>
 
-            <div class="bg-cream rounded-[2rem] p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div class="max-w-xs">
-                    <h3 class="font-serif text-2xl font-bold mb-2">Explore Ceritakita</h3>
-                    <p class="text-xs text-stone-500 leading-relaxed">Nikmati seluruh ekosistem layanan kuliner andalan kami yang dirancang khusus untuk memenuhi kebutuhan seleramu.</p>
-                </div>
-                
-                <div class="grid grid-cols-3 gap-4 w-full md:w-auto flex-grow max-w-md">
-                    <div class="bg-white p-4 rounded-2xl border border-stone-200/60 text-center hover:shadow-lg transition">
-                        <div class="text-amber-800 text-xl mb-2"><i class="fas fa-utensils"></i></div>
-                        <h4 class="font-bold text-xs mb-3">Our Catering</h4>
-                        <button class="bg-black text-white text-[9px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full w-full whitespace-nowrap">Pesan Catering</button>
-                    </div>
-                    <div class="bg-white p-4 rounded-2xl border border-stone-200/60 text-center hover:shadow-lg transition">
-                        <div class="text-amber-800 text-xl mb-2"><i class="fas fa-hamburger"></i></div>
-                        <h4 class="font-bold text-xs mb-3">Food Menu</h4>
-                        <button class="bg-black text-white text-[9px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full w-full whitespace-nowrap">Menu Makanan</button>
-                    </div>
-                    <div class="bg-white p-4 rounded-2xl border border-stone-200/60 text-center hover:shadow-lg transition">
-                        <div class="text-amber-800 text-xl mb-2"><i class="fas fa-ice-cream"></i></div>
-                        <h4 class="font-bold text-xs mb-3">The Gelato</h4>
-                        <button class="bg-black text-white text-[9px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full w-full whitespace-nowrap">Temukan Rasa</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-cream rounded-[2rem] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="flex -space-x-3">
-                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User 1">
-                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="User 2">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm">What Our Customers Say</h4>
-                        <div class="flex items-center gap-1.5 text-xs text-stone-500 font-bold mt-0.5">
-                            <span>4.9</span> <div class="text-amber-400 text-[10px]"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-xs text-stone-500 italic max-w-sm text-center sm:text-right">"Tempat ternyaman untuk menyelesaikan pekerjaan kantor sekaligus menikmati es kopi susu aren terbaik."</p>
-            </div>
-        </div>
-
-        <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
-            
-            <div class="bg-cream rounded-[2rem] p-8 relative overflow-hidden min-h-[260px] flex flex-col justify-between">
+            <div id="order" class="lg:col-span-5 bg-cream rounded-[2rem] p-8 relative overflow-hidden min-h-[300px] lg:min-h-full flex flex-col justify-between shadow-sm">
                 <div class="max-w-xs relative z-10">
                     <h2 class="font-serif text-3xl font-bold mb-3">Order Your <br>Favourite Coffee</h2>
                     <p class="text-xs text-stone-500 leading-relaxed mb-6">Pesan kopi instan atau biji roasted kustom favoritmu langsung melalui aplikasi kami untuk kemudahan pick-up tanpa antre.</p>
                     <button class="btn-slide bg-black text-white font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full">Order Instant</button>
                 </div>
                 
-                <div class="absolute -right-6 -bottom-6 w-44 h-44 opacity-80 pointer-events-none hidden sm:block">
+                <div class="absolute -right-6 -bottom-6 w-52 h-52 opacity-80 pointer-events-none hidden sm:block">
                     <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover rounded-full rotate-[15deg] border-4 border-white shadow-lg" alt="Mini Cup">
                 </div>
             </div>
+        </section>
 
-            <div class="bg-cream rounded-[2rem] p-8 flex-grow flex flex-col justify-between">
-                <div class="mb-6">
-                    <h3 class="font-serif text-2xl font-bold mb-1">Best Selling Coffee</h3>
-                    <p class="text-xs text-stone-500">Deretan menu kopi kemasan botol andalan yang paling digemari para penikmat cerita lama.</p>
+        <section id="explore" class="bg-cream rounded-[2rem] p-8 md:p-12 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 shadow-sm">
+            <div class="max-w-md">
+                <h3 class="font-serif text-3xl font-bold mb-3">Explore Ceritakita</h3>
+                <p class="text-sm text-stone-500 leading-relaxed">Nikmati seluruh ekosistem layanan kuliner andalan kami yang dirancang khusus untuk memenuhi kebutuhan seleramu dan melengkapi produktivitas harian.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full lg:w-auto flex-grow max-w-2xl">
+                <div class="bg-white p-5 rounded-3xl border border-stone-200/60 text-center hover:shadow-md transition">
+                    <div class="text-amber-800 text-2xl mb-2"><i class="fas fa-utensils"></i></div>
+                    <h4 class="font-bold text-sm mb-4">Our Catering</h4>
+                    <button class="bg-black text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full w-full">Pesan Catering</button>
                 </div>
+                <div class="bg-white p-5 rounded-3xl border border-stone-200/60 text-center hover:shadow-md transition">
+                    <div class="text-amber-800 text-2xl mb-2"><i class="fas fa-hamburger"></i></div>
+                    <h4 class="font-bold text-sm mb-4">Food Menu</h4>
+                    <button class="bg-black text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full w-full">Menu Makanan</button>
+                </div>
+                <div class="bg-white p-5 rounded-3xl border border-stone-200/60 text-center hover:shadow-md transition">
+                    <div class="text-amber-800 text-2xl mb-2"><i class="fas fa-ice-cream"></i></div>
+                    <h4 class="font-bold text-sm mb-4">The Gelato</h4>
+                    <button class="bg-black text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full w-full">Temukan Rasa</button>
+                </div>
+            </div>
+        </section>
 
-                <div class="space-y-3">
-                    <div class="bg-white p-3 rounded-2xl border border-stone-200/60 flex items-center justify-between">
+        <section id="menu" class="bg-cream rounded-[2rem] p-8 md:p-12 shadow-sm">
+            <div class="mb-8 max-w-xl">
+                <h3 class="font-serif text-3xl font-bold mb-2">Best Selling Coffee</h3>
+                <p class="text-sm text-stone-500">Deretan menu kopi kemasan botol andalan and esensi rasa murni yang paling digemari para penikmat cerita hangat di ruang kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-3xl border border-stone-200/60 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-900 font-bold text-xs"><i class="fas fa-bolt text-lg"></i></div>
+                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-900 font-bold text-sm"><i class="fas fa-bolt text-xl"></i></div>
                             <div>
-                                <h4 class="font-bold text-xs">Double Espresso</h4>
+                                <h4 class="font-bold text-sm">Double Espresso</h4>
                                 <span class="text-[10px] uppercase font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md mt-1 inline-block tracking-tighter">Pure Strong</span>
                             </div>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <span class="font-mono font-bold text-xs">Rp 39.900</span>
-                            <button class="bg-black hover:bg-stone-800 text-white text-[10px] font-bold uppercase py-2 px-4 rounded-full">Beli</button>
-                        </div>
+                        <span class="font-mono font-bold text-sm text-amber-900">Rp 39.900</span>
                     </div>
-                    <div class="bg-white p-3 rounded-2xl border border-stone-200/60 flex items-center justify-between">
+                    <button class="w-full bg-black hover:bg-stone-800 text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded-full">Beli Sekarang</button>
+                </div>
+                
+                <div class="bg-white p-4 rounded-3xl border border-stone-200/60 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-900 font-bold text-xs"><i class="fas fa-ice-cream text-lg"></i></div>
+                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-900 font-bold text-sm"><i class="fas fa-ice-cream text-xl"></i></div>
                             <div>
-                                <h4 class="font-bold text-xs">Caramel Frappe</h4>
+                                <h4 class="font-bold text-sm">Caramel Frappe</h4>
                                 <span class="text-[10px] uppercase font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md mt-1 inline-block tracking-tighter">Sweet Cream</span>
                             </div>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <span class="font-mono font-bold text-xs">Rp 59.900</span>
-                            <button class="bg-black hover:bg-stone-800 text-white text-[10px] font-bold uppercase py-2 px-4 rounded-full">Beli</button>
-                        </div>
+                        <span class="font-mono font-bold text-sm text-amber-900">Rp 59.900</span>
                     </div>
-                    <div class="bg-white p-3 rounded-2xl border border-stone-200/60 flex items-center justify-between">
+                    <button class="w-full bg-black hover:bg-stone-800 text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded-full">Beli Sekarang</button>
+                </div>
+                
+                <div class="bg-white p-4 rounded-3xl border border-stone-200/60 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-900 font-bold text-xs"><i class="fas fa-snowflake text-lg"></i></div>
+                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-900 font-bold text-sm"><i class="fas fa-snowflake text-xl"></i></div>
                             <div>
-                                <h4 class="font-bold text-xs">Iced Coffee Latte</h4>
+                                <h4 class="font-bold text-sm">Iced Coffee Latte</h4>
                                 <span class="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md mt-1 inline-block tracking-tighter">Best Seller</span>
                             </div>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <span class="font-mono font-bold text-xs">Rp 45.900</span>
-                            <button class="bg-black hover:bg-stone-800 text-white text-[10px] font-bold uppercase py-2 px-4 rounded-full">Beli</button>
+                        <span class="font-mono font-bold text-sm text-amber-900">Rp 45.900</span>
+                    </div>
+                    <button class="w-full bg-black hover:bg-stone-800 text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded-full">Beli Sekarang</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-5 h-[350px] lg:h-[450px] rounded-[2rem] overflow-hidden shadow-sm relative">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Coffee Brewing">
+                <div class="absolute inset-0 bg-black/20"></div>
+            </div>
+            
+            <div class="lg:col-span-7 bg-cream rounded-[2rem] p-8 md:p-12 flex flex-col justify-center min-h-[350px] lg:min-h-[450px] shadow-sm">
+                <h3 class="font-serif text-3xl md:text-4xl font-black mb-4">Filosofi & Ruang Ketiga</h3>
+                <p class="text-sm text-stone-600 leading-relaxed mb-6">
+                    Ceritakita Coffee lahir dari pemahaman bahwa cangkir kopi terbaik adalah cangkir yang dinikmati bersama sebuah kisah. Kami mendedikasikan ruang ini sebagai "ruang ketiga"—sebuah tempat persinggahan nyaman di antara rumah dan tempat kerjamu untuk merajut kembali inspirasi yang sempat terputus.
+                </p>
+                <div class="grid grid-cols-2 gap-4 border-t border-stone-200/80 pt-6">
+                    <div>
+                        <h5 class="font-bold text-sm text-coffee mb-1"><i class="fas fa-leaf mr-2 text-emerald-700"></i> Biji Organik</h5>
+                        <p class="text-xs text-stone-500">100% dipasok dari petani lokal pilihan dengan sistem perdagangan adil.</p>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-sm text-coffee mb-1"><i class="fas fa-wifi mr-2 text-blue-700"></i> Ruang Produktif</h5>
+                        <p class="text-xs text-stone-500">Dilengkapi koneksi internet ultra cepat and colokan melimpah di setiap sudut.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="bg-cream rounded-[2rem] p-8 md:p-12 shadow-sm">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <h3 class="font-serif text-3xl font-bold mb-2">Suara dari Rumah Cerita</h3>
+                <p class="text-xs text-stone-500">Kisah nyata dari mereka yang telah menjadikan sudut-sudut kafe kami sebagai bagian dari rutinitas hariannya.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 flex flex-col justify-between">
+                    <p class="text-xs text-stone-600 leading-relaxed italic mb-4">"Tempat paling syahdu and tenang buat nyelesaiin deadline kerjaan remote. Es Kopi Susu Arennya beneran nagih, pas manisnya!"</p>
+                    <div class="flex items-center gap-3">
+                        <img class="w-8 h-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Rian">
+                        <div>
+                            <h5 class="font-bold text-xs">Andini P.</h5>
+                            <span class="text-[10px] text-stone-400">Software Engineer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 flex flex-col justify-between">
+                    <p class="text-xs text-stone-600 leading-relaxed italic mb-4">"V60 Manual Brew-nya juara! Baristanya juga ramah and asyik diajak diskusi soal karakter rasa biji kopi nusantara yang lagi ready."</p>
+                    <div class="flex items-center gap-3">
+                        <img class="w-8 h-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Dimas">
+                        <div>
+                            <h5 class="font-bold text-xs">Dimas Mahendra</h5>
+                            <span class="text-[10px] text-stone-400">Coffee Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+                    <p class="text-xs text-stone-600 leading-relaxed italic mb-4">"Area outdoor-nya asri and adem banget kalau sore. Cocok buat sekadar ngobrol santai atau kumpul komunitas merajut ide kreatif."</p>
+                    <div class="flex items-center gap-3">
+                        <img class="w-8 h-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Siti">
+                        <div>
+                            <h5 class="font-bold text-xs">Siti Rahma</h5>
+                            <span class="text-[10px] text-stone-400">Content Creator</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="bg-cream rounded-[2rem] p-6 relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-4">
-                <div class="max-w-xs text-center sm:text-left">
-                    <h3 class="font-serif text-lg font-bold mb-1">Instant Coffee At Your Home</h3>
-                    <p class="text-[11px] text-stone-500 leading-relaxed mb-4">Bawa pulang bubuk kopi sachet premium racikan Ceritakita untuk dinikmati kapan saja di rumah.</p>
-                    <button class="bg-black hover:bg-stone-800 text-white text-[10px] font-bold uppercase tracking-wider py-2 px-4 rounded-full"><i class="fab fa-google-play mr-1"></i> Download App</button>
+        <section class="bg-cream rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-6 shadow-sm">
+            <div class="max-w-md text-center sm:text-left">
+                <h3 class="font-serif text-2xl font-bold mb-2">Instant Coffee At Your Home</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mb-6">Bawa pulang bubuk kopi sachet premium atau cold brew signature botolan racikan Ceritakita untuk dinikmati kapan saja di ruang ternyaman rumahmu.</p>
+                <button class="bg-black hover:bg-stone-800 text-white text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-full inline-flex items-center gap-2 transition"><i class="fab fa-google-play"></i> App Store & Play Store</button>
+            </div>
+            
+            <div class="text-right flex items-center gap-2 select-none">
+                <span class="font-serif text-2xl font-bold tracking-tight text-stone-800">Hi Guys</span>
+                <span class="text-3xl animate-bounce">👋</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="w-full bg-[#1e1b18] text-stone-400 pt-16 pb-8 px-6 md:px-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 text-sm">
+            
+            <div class="space-y-4">
+                <div class="font-serif text-2xl font-black tracking-tight flex items-center gap-1.5 text-white">
+                    <span class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center text-sm font-sans">C</span> ceritakita.
                 </div>
-                
-                <div class="text-right flex items-center gap-2 select-none">
-                    <span class="font-serif text-xl font-bold tracking-tight text-stone-800">Hi Guys</span>
-                    <span class="text-2xl animate-bounce">👋</span>
+                <p class="text-xs text-stone-500 leading-relaxed">
+                    Menyajikan esensi rasa murni and tempat ternyaman untuk merajut jutaan cerita baru di setiap cangkir kopi harianmu.
+                </p>
+                <div class="flex gap-4 text-base text-stone-400 pt-2">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
+
+            <div>
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Navigasi Kafe</h4>
+                <div class="flex flex-col gap-2.5 text-xs">
+                    <a href="#home" class="hover:text-white transition">Home</a>
+                    <a href="#explore" class="hover:text-white transition">Explore Services</a>
+                    <a href="#menu" class="hover:text-white transition">Menu Unggulan</a>
+                    <a href="#about" class="hover:text-white transition">Filosofi Ruang</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Jam Operasional</h4>
+                <div class="flex flex-col gap-2 text-xs text-stone-500">
+                    <p><span class="text-stone-300 font-semibold block">Senin - Jumat</span> 09.00 AM - 10.00 PM</p>
+                    <p><span class="text-stone-300 font-semibold block">Sabtu - Minggu</span> 08.00 AM - 11.00 PM</p>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Kontak & Rumah</h4>
+                <div class="flex flex-col gap-2 text-xs text-stone-500 leading-relaxed">
+                    <p><i class="fas fa-map-marker-alt text-white mr-1.5"></i> Jl. Kenangan Indah No. 45, Kompleks Ruang Kreatif, Indonesia.</p>
+                    <p><i class="fas fa-envelope text-white mr-1.5"></i> halo@ceritakitacoffee.com</p>
+                </div>
+            </div>
+
         </div>
 
-    </div>
+        <div class="max-w-7xl mx-auto border-t border-stone-800/80 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-stone-600 font-medium">
+            <p>© 2026 CERITAKITA COFFEE. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-stone-400 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-stone-400 transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Transisi warna Navbar saat halaman di-scroll ke bawah
+        const mainNav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                mainNav.classList.add('nav-scrolled', 'shadow-sm');
+                mainNav.classList.remove('py-5');
+                mainNav.classList.add('py-3.5');
+            } else {
+                mainNav.classList.remove('nav-scrolled', 'shadow-sm');
+                mainNav.classList.add('py-5');
+                mainNav.classList.remove('py-3.5');
+            }
+        });
+
+        // Kontrol Aktivasi Menu Hamburger Dropdown Mobile
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            const isMenuOpen = !mobileMenu.classList.contains('translate-x-full');
+            menuIcon.className = isMenuOpen ? "fas fa-times" : "fas fa-bars-staggered";
+        });
+
+        // Menutup menu mobile secara otomatis saat salah satu tautan jangkar di-klik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                menuIcon.className = "fas fa-bars-staggered";
+            });
+        });
+    </script>
 </body>
 </html>
