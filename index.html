@@ -136,61 +136,61 @@
 
     <main class="w-full max-w-7xl mx-auto px-4 md:px-6 space-y-16 mb-16">
         
-        <section id="home" class="flex flex-col gap-6 w-full">
+        <section id="home" class="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
-            <div class="w-full bg-cream rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col justify-between min-h-[520px] shadow-sm" data-aos="fade-up" data-aos-duration="1000">
-                <div class="max-w-xl my-auto relative z-10">
-                    <div class="flex items-center gap-2 mb-4 award-badge px-3 py-1 rounded-full border w-fit">
+            <div class="lg:col-span-7 bg-cream rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col justify-between min-h-[550px] shadow-sm" data-aos="fade-right" data-aos-duration="1000">
+                <div class="max-w-md my-auto relative z-10">
+                    <div class="flex items-center gap-2 mb-4 award-badge px-3 py-1 rounded-full border w-fit" data-aos="fade-down" data-aos-delay="200">
                         <span class="text-xs font-bold uppercase tracking-widest">
                             ⭐ Cafe Of The Year 2026
                         </span>
                     </div>
                     
-                    <h1 class="font-serif text-5xl md:text-6xl font-black leading-[1.1] mb-6 title-accent">
+                    <h1 class="font-serif text-5xl md:text-6xl font-black leading-[1.1] mb-6 title-accent" data-aos="fade-up" data-aos-delay="300">
                         Ceritakita <br>Delicious <br><span class="text-amber-600 italic">Coffee.</span>
                     </h1>
-                    <p class="text-sm text-stone-600 leading-relaxed mb-8 text-taupe">
+                    <p class="text-sm text-stone-600 leading-relaxed mb-8 text-taupe" data-aos="fade-up" data-aos-delay="450">
                         Segelas racikan kopi dari barista terampil kami, dibuat khusus menggunakan biji kopi nusantara pilihan untuk menemani setiap pertukaran kisah hangatmu.
                     </p>
-                    <div class="flex flex-wrap gap-4 py-2">
+                    <div class="flex flex-wrap gap-4 py-2" data-aos="fade-up" data-aos-delay="600">
                         <a href="#menu" class="btn-slide bg-coffee text-taupe px-6 py-3.5 rounded-full text-cream award-badge text-center font-bold">Lihat Menu Favorit</a>
                         <a href="#about" class="btn-slide bg-transparent border-2 hover:bg-stone-800 text-coffee font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full text-center separator-accent title-accent">Baca Cerita Kami</a>
                     </div>
                 </div>
 
-                <div class="absolute right-12 bottom-12 w-1/3 hidden lg:flex flex-col items-end pointer-events-none">
-                    <div class="backdrop-blur-sm p-4 rounded-2xl shadow-md border mb-6 bg-[#2b1f16]/90 separator-accent">
+                <div class="absolute right-4 bottom-8 w-1/2 hidden md:flex flex-col items-end pointer-events-none" data-aos="zoom-in-left" data-aos-delay="500">
+                    <div class="backdrop-blur-sm p-4 rounded-2xl shadow-md border mb-6 mr-6 max-w-[180px] bg-[#2b1f16]/90 separator-accent">
                         <div class="flex text-amber-400 text-xs mb-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="text-[11px] font-bold text-separator-small leading-tight">4.9/5 Rating Kepuasan Pelanggan Rumah Cerita.</p>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=80" class="w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl rotate-12 separator-accent" alt="Coffee Cup">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=80" class="w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl rotate-12 mb-4 separator-accent" alt="Coffee Cup">
                 </div>
             </div>
 
-            <div id="order" class="w-full bg-cream rounded-[2rem] p-8 relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-sm" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="max-w-md relative z-10">
-                    <h2 class="font-serif text-3xl font-bold mb-3 title-accent">Order Your Favourite Coffee</h2>
-                    <p class="text-xs text-stone-500 leading-relaxed mb-5 text-taupe">Pesan kopi instan atau biji roasted kustom favoritmu langsung melalui aplikasi kami untuk kemudahan pick-up tanpa antre.</p>
-                    <button class="btn-slide bg-coffee text-taupe px-6 py-2.5 rounded-full award-badge text-cream font-bold mb-2">Order Instant</button>
+            <div id="order" class="lg:col-span-5 bg-cream rounded-[2rem] p-8 relative overflow-hidden min-h-[350px] lg:min-h-full flex flex-col justify-between shadow-sm" data-aos="fade-left" data-aos-duration="1000">
+                <div class="max-w-xs relative z-10 w-full" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="font-serif text-3xl font-bold mb-3 title-accent">Order Your <br>Favourite Coffee</h2>
+                    <p class="text-xs text-stone-500 leading-relaxed mb-6 text-taupe">Pesan kopi instan atau biji roasted kustom favoritmu langsung melalui aplikasi kami untuk kemudahan pick-up tanpa antre.</p>
+                    
+                    <button class="btn-slide bg-coffee text-taupe px-5 py-2.5 rounded-full award-badge text-cream font-bold mb-6">Order Instant</button>
+                    
+                    <div class="flex flex-col items-center gap-3 bg-black/40 p-4 rounded-2xl border border-[#3b2c21] w-full text-center">
+                        <div class="qr-matrix-container shadow-md flex-shrink-0">
+                            <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
+                            <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div>
+                            <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                            <div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
+                            <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                            <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
+                        </div>
+                        <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-xs">Scan for Check All Menu</p>
+                    </div>
                 </div>
                 
-                <div class="flex flex-row items-center gap-4 bg-black/40 p-4 rounded-2xl border border-[#3b2c21] w-full md:w-auto md:min-w-[280px] z-10">
-                    <div class="qr-matrix-container shadow-md flex-shrink-0">
-                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                        <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div>
-                        <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                        <div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
-                        <div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-blank"></div><div class="qr-pixel"></div>
-                    </div>
-                    <p class="font-serif font-black italic text-[#e3d5ca] tracking-wide text-xs">Scan for Check All Menu</p>
-                </div>
-
-                <div class="absolute right-6 -bottom-8 w-32 h-32 opacity-20 pointer-events-none hidden md:block">
+                <div class="absolute -right-6 -bottom-6 w-52 h-52 opacity-20 pointer-events-none hidden sm:block" data-aos="zoom-in" data-aos-delay="400">
                     <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover rounded-full rotate-[15deg] border-4 border-white shadow-lg separator-accent" alt="Mini Cup">
                 </div>
             </div>
-
         </section>
 
         <section id="explore" class="bg-cream rounded-[2rem] p-8 md:p-12 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 shadow-sm" data-aos="fade-up" data-aos-duration="1000">
